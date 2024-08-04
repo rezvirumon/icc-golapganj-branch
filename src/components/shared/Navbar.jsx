@@ -26,11 +26,11 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`fixed bg-green-200 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
+        <nav className={`fixed bg-green-100 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <Link to="/" className="w-24 border">
+                        <Link to="/" className="w-24">
                             <img src={Logo} alt="Logo" />
                         </Link>
                     </div>
