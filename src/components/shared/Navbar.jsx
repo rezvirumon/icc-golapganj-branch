@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi"; // Importing the icons
 import Logo from "../../assets/resource/ICC-Logo.png";
+import Branch from "./Branch";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +40,9 @@ const Navbar = () => {
                         <Link to="/" className="w-24">
                             <img src={Logo} alt="Logo" />
                         </Link>
+                        <div className="lg:block hidden">
+                        <Branch></Branch>
+                        </div>
                     </div>
                     <div className="hidden md:flex space-x-4">
                         <Link to="/" className="text-gray-800 hover:text-gray-600">Home</Link>

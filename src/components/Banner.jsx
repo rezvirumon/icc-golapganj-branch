@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
+import { Fade } from 'react-reveal';
 import Packages1 from '../assets/resource/10.png';
 import Packages2 from '../assets/resource/12.png';
 import Packages3 from '../assets/resource/20.png';
@@ -64,10 +63,7 @@ const Banner = () => {
                         alt={title}
                     />
                 </Fade>
-                <div className='border-2 border-green-400 h-[200px;] hidden lg:block'>
-                    
-                </div>
-                <div className=''>
+                <div className="lg:flex-grow lg:mr-10">
                     <Fade bottom key={`title-${currentIndex}`}>
                         <h1 className="lg:text-5xl text-3xl my-5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-900">
                             {title}
@@ -77,12 +73,9 @@ const Banner = () => {
                         <p className="lg:py-6 py-4 lg:w-96">{description}</p>
                     </Fade>
                     <Fade bottom delay={600} key={`button-${currentIndex}`}>
-                        <a href="#" className="relative px-5 py-2 font-medium text-white group">
-                            <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
-                            <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-700 group-hover:bg-green-500 group-hover:-skew-x-12"></span>
-                            <span className="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-purple-600 -rotate-12"></span>
-                            <span className="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-purple-400 -rotate-12"></span>
-                            <span className="relative">Get Start</span>
+                        <a href="#" className="relative inline-block px-5 py-3 font-medium text-white bg-green-500 rounded-md group hover:bg-green-700 transition duration-300">
+                            <span className="relative z-10">Get Started</span>
+                            <span className="absolute inset-0 w-full h-full transition-all duration-300 transform -translate-x-2 -translate-y-2 bg-green-700 rounded-md group-hover:translate-x-0 group-hover:translate-y-0"></span>
                         </a>
                     </Fade>
                 </div>
