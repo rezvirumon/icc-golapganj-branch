@@ -55,7 +55,7 @@ const Banner = () => {
     const { img, title, description } = banners[currentIndex];
 
     return (
-        <div className="hero py-10 border shadow-xl">
+        <div className="hero lg:py-24 py-5 border shadow-xl">
             <div className="lg:flex flex-col justify-between w-full container p-5 items-center lg:flex-row-reverse">
                 <Fade key={`image-${currentIndex}`}>
                     <img
