@@ -6,6 +6,7 @@ import Packages3 from '../assets/resource/20.png';
 import Packages4 from '../assets/resource/30.png';
 import Packages5 from '../assets/resource/45.png';
 import Packages6 from '../assets/resource/100.png';
+import icctheme from '../assets/resource/icc-theme.png';
 
 const Banner = () => {
     const banners = [
@@ -54,16 +55,17 @@ const Banner = () => {
     const { img, title, description } = banners[currentIndex];
 
     return (
-        <div className="hero lg:py-24 py-5 border shadow-xl">
+        <div className="hero lg:py-24 py-5 border shadow-xl bg-white">
             <div className="lg:flex flex-col justify-between w-full container p-5 items-center lg:flex-row-reverse">
                 <Fade key={`image-${currentIndex}`}>
                     <img
                         src={img}
-                        className="lg:max-w-sm shadow-xl"
+                        className="lg:max-w-sm transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/50 rounded-xl"
                         alt={title}
                     />
+
                 </Fade>
-                <div className="lg:flex-grow lg:mr-10">
+                <div className="lg:flex-grow lg:mr-10 cursor-pointer relative z-10">
                     <Fade bottom key={`title-${currentIndex}`}>
                         <h1 className="lg:text-5xl text-3xl my-5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-900">
                             {title}
@@ -74,11 +76,17 @@ const Banner = () => {
                     </Fade>
                     <Fade bottom delay={600} key={`button-${currentIndex}`}>
                         <a href="#" className="relative inline-block px-5 py-3 font-medium text-white bg-green-500 rounded-md group hover:bg-green-700 transition duration-300">
-                            <span className="relative z-10">Get Started</span>
+                            <span
+                                className="flex relative z-10">Get Started
+                            </span>
                             <span className="absolute inset-0 w-full h-full transition-all duration-300 transform -translate-x-2 -translate-y-2 bg-green-700 rounded-md group-hover:translate-x-0 group-hover:translate-y-0"></span>
                         </a>
                     </Fade>
                 </div>
+            </div>
+            <div className='absolute inset-0 pointer-events-none lg:block hidden'>
+                <img className='absolute opacity-10 -left-48 -top-16 h-[700px;]' src={icctheme} alt="ICC Theme" />
+
             </div>
         </div>
     );
