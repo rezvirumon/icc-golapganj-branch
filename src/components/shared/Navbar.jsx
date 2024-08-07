@@ -61,8 +61,8 @@ const Navbar = () => {
                     <div className="hidden md:flex space-x-4">
                         <Link to="/" className="text-gray-800 hover:text-green-600">Home</Link>
                         <div className="relative">
-                            <button 
-                                onClick={toggleDropdown} 
+                            <button
+                                onClick={toggleDropdown}
                                 className="text-gray-800 hover:text-green-600 focus:outline-none"
                                 aria-expanded={isDropdownOpen}
                                 aria-haspopup="true"
@@ -82,7 +82,7 @@ const Navbar = () => {
                         {/* <Link to="/about" className="text-gray-800 hover:text-green-600">About</Link> */}
                         <Link to="/contact" className="text-gray-800 hover:text-green-600">Contact</Link>
                     </div>
-                    <div className="hidden md:block space-x-6">
+                    <div className="hidden items-center md:flex space-x-6">
                         {user ? (
                             <>
                                 <button onClick={handleLogout} className="text-green-800 hover:text-green-600">Logout</button>
@@ -124,8 +124,8 @@ const Navbar = () => {
                         )}
                     </div>
                     <div className="md:hidden flex items-center">
-                        <button 
-                            onClick={toggleMenu} 
+                        <button
+                            onClick={toggleMenu}
                             className="text-gray-800 hover:text-gray-600 focus:outline-none"
                             aria-expanded={isOpen}
                             aria-haspopup="true"
@@ -137,7 +137,7 @@ const Navbar = () => {
             </div>
             {isOpen && (
                 <div className="md:hidden bg-white shadow-md">
-                    <div className="flex flex-col space-y-4 p-4">
+                    <div className="flex  flex-col space-y-4 p-4">
                         <Link to="/" className="text-gray-800 hover:text-gray-600">Home</Link>
                         <Link to="/services" className="text-gray-800 hover:text-gray-600">Services</Link>
                         <Link to="/packages" className="text-gray-800 hover:text-gray-600">Packages</Link>
@@ -146,6 +146,7 @@ const Navbar = () => {
                         <Link to="https://iccfios.net/icc-form/" className="text-gray-800 hover:text-gray-600">IP Telephony Registration</Link>
                         <Link to="https://portal.iccbd.com/customer/login" className="text-gray-800 hover:text-gray-600">Portal</Link>
                         <Link to="https://billing.iccbd.com/index.jsp" className="text-gray-800 hover:text-gray-600">Resellers</Link>
+                        <Link to="/customers" className="text-green-800 hover:text-green-600">Users Section</Link>
                         <Link to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">ICC-Website</Link>
 
                         <a href="http://10.16.100.244/" className="relative px-5 py-2 font-medium text-white group">
@@ -162,6 +163,12 @@ const Navbar = () => {
                             <span className="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-purple-400 -rotate-12"></span>
                             <span className="relative">Pay Now</span>
                         </a>
+
+                        {user ? (
+                            <button onClick={handleLogout} className="text-green-800 hover:text-green-600">Logout</button>
+                        ) : (
+                            <Link to="/login" className="text-green-800 hover:text-green-600">Login</Link>
+                        )}
                     </div>
                 </div>
             )}
