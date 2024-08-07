@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import Logo from "../../assets/resource/ICC-Logo.png";
 import Branch from "./Branch";
@@ -51,15 +51,15 @@ const Navbar = () => {
             <div className="mx-auto px-4 sm:px-6">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <Link to="/" className="w-24">
+                        <NavLink to="/" className="w-24">
                             <img src={Logo} alt="Logo" className="object-contain" />
-                        </Link>
+                        </NavLink>
                         <div className="lg:block hidden">
                             <Branch />
                         </div>
                     </div>
                     <div className="hidden md:flex space-x-4">
-                        <Link to="/" className="text-gray-800 hover:text-green-600">Home</Link>
+                        <NavLink to="/" className="text-gray-800 hover:text-green-600">Home</NavLink>
                         <div className="relative">
                             <button
                                 onClick={toggleDropdown}
@@ -71,22 +71,22 @@ const Navbar = () => {
                             </button>
                             {isDropdownOpen && (
                                 <div className="absolute mt-2 w-48 bg-white shadow-lg rounded-lg">
-                                    <Link to="https://iccfios.net/icc-form/" className="block px-4 py-2 text-green-800 hover:bg-gray-100">IP Telephony Registration</Link>
-                                    <Link to="https://portal.iccbd.com/customer/login" className="block px-4 py-2 text-green-800 hover:bg-gray-100">Portal</Link>
-                                    <Link to="https://billing.iccbd.com/index.jsp" className="block px-4 py-2 text-green-800 hover:bg-gray-100">Resellers</Link>
-                                    <Link to="/customers" className="block px-4 py-2 text-green-800 hover:bg-gray-100">Users Sections</Link>
+                                    <NavLink to="https://iccfios.net/icc-form/" className="block px-4 py-2 text-green-800 hover:bg-gray-100">IP Telephony Registration</NavLink>
+                                    <NavLink to="https://portal.iccbd.com/customer/login" className="block px-4 py-2 text-green-800 hover:bg-gray-100">Portal</NavLink>
+                                    <NavLink to="https://billing.iccbd.com/index.jsp" className="block px-4 py-2 text-green-800 hover:bg-gray-100">Resellers</NavLink>
+                                    <NavLink to="/customers" className="block px-4 py-2 text-green-800 hover:bg-gray-100">Users Sections</NavLink>
                                 </div>
                             )}
                         </div>
-                        <Link to="/packages" className="text-gray-800 hover:text-green-600">Packages</Link>
-                        {/* <Link to="/about" className="text-gray-800 hover:text-green-600">About</Link> */}
-                        <Link to="/contact" className="text-gray-800 hover:text-green-600">Contact</Link>
+                        <NavLink to="/packages" className="text-gray-800 hover:text-green-600">Packages</NavLink>
+                        {/* <NavLink to="/about" className="text-gray-800 hover:text-green-600">About</NavLink> */}
+                        <NavLink to="/contact" className="text-gray-800 hover:text-green-600">Contact</NavLink>
                     </div>
                     <div className="hidden items-center md:flex space-x-6">
                         {user ? (
                             <>
                                 <button onClick={handleLogout} className="text-green-800 hover:text-green-600">Logout</button>
-                                <Link to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">ICC-Website</Link>
+                                <NavLink to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">ICC-Website</NavLink>
                                 <a href="http://10.16.100.244/" className="relative px-5 py-2 font-medium text-white group">
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-700 group-hover:bg-green-500 group-hover:-skew-x-12"></span>
@@ -104,8 +104,8 @@ const Navbar = () => {
                             </>
                         ) : (
                             <>
-                                <Link to="/login" className="text-green-800 hover:text-green-600">Login</Link>
-                                <Link to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">ICC-Website</Link>
+                                <NavLink to="/login" className="text-green-800 hover:text-green-600">Login</NavLink>
+                                <NavLink to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">ICC-Website</NavLink>
                                 <a href="http://10.16.100.244/" className="relative px-5 py-2 font-medium text-white group">
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-700 group-hover:bg-green-500 group-hover:-skew-x-12"></span>
@@ -138,16 +138,16 @@ const Navbar = () => {
             {isOpen && (
                 <div className="md:hidden bg-white shadow-md">
                     <div className="flex  flex-col space-y-4 p-4">
-                        <Link to="/" className="text-gray-800 hover:text-gray-600">Home</Link>
-                        <Link to="/services" className="text-gray-800 hover:text-gray-600">Services</Link>
-                        <Link to="/packages" className="text-gray-800 hover:text-gray-600">Packages</Link>
-                        <Link to="/about" className="text-gray-800 hover:text-gray-600">About</Link>
-                        <Link to="/contact" className="text-gray-800 hover:text-gray-600">Contact</Link>
-                        <Link to="https://iccfios.net/icc-form/" className="text-gray-800 hover:text-gray-600">IP Telephony Registration</Link>
-                        <Link to="https://portal.iccbd.com/customer/login" className="text-gray-800 hover:text-gray-600">Portal</Link>
-                        <Link to="https://billing.iccbd.com/index.jsp" className="text-gray-800 hover:text-gray-600">Resellers</Link>
-                        <Link to="/customers" className="text-green-800 hover:text-green-600">Users Section</Link>
-                        <Link to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">ICC-Website</Link>
+                        <NavLink to="/" className="text-gray-800 hover:text-gray-600">Home</NavLink>
+                        <NavLink to="/services" className="text-gray-800 hover:text-gray-600">Services</NavLink>
+                        <NavLink to="/packages" className="text-gray-800 hover:text-gray-600">Packages</NavLink>
+                        <NavLink to="/about" className="text-gray-800 hover:text-gray-600">About</NavLink>
+                        <NavLink to="/contact" className="text-gray-800 hover:text-gray-600">Contact</NavLink>
+                        <NavLink to="https://iccfios.net/icc-form/" className="text-gray-800 hover:text-gray-600">IP Telephony Registration</NavLink>
+                        <NavLink to="https://portal.iccbd.com/customer/login" className="text-gray-800 hover:text-gray-600">Portal</NavLink>
+                        <NavLink to="https://billing.iccbd.com/index.jsp" className="text-gray-800 hover:text-gray-600">Resellers</NavLink>
+                        <NavLink to="/customers" className="text-green-800 hover:text-green-600">Users Section</NavLink>
+                        <NavLink to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">ICC-Website</NavLink>
 
                         <a href="http://10.16.100.244/" className="relative px-5 py-2 font-medium text-white group">
                             <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
@@ -167,7 +167,7 @@ const Navbar = () => {
                         {user ? (
                             <button onClick={handleLogout} className="text-green-800 hover:text-green-600">Logout</button>
                         ) : (
-                            <Link to="/login" className="text-green-800 hover:text-green-600">Login</Link>
+                            <NavLink to="/login" className="text-green-800 hover:text-green-600">Login</NavLink>
                         )}
                     </div>
                 </div>

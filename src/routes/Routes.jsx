@@ -9,6 +9,8 @@ import Contact from "../pages/Contact/Contact";
 import Customers from "../pages/Customers/Customers";
 import Login from "../pages/Validation/Login";
 import CreateNew from "../pages/Validation/CreateNew";
+import GetPackage from "../pages/Packages/GetPackage";
+import PrivateRoute from "./private/PrivateRoute";
 
 
 
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: '/packages',
                 element: <Packages></Packages>
+            },
+            {
+                path: '/getstart/:id',
+                element: <PrivateRoute><GetPackage></GetPackage></PrivateRoute>
             },
             {
                 path: '/about',
