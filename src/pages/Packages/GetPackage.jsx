@@ -8,6 +8,7 @@ import Packages5 from '../../assets/resource/45.png';
 import Packages6 from '../../assets/resource/100.png';
 import packagesData from '../../../public/data/package.json'; // Adjust the path if necessary
 import ConnectionForm from './ConnectionForm';
+import ConnectionRequestTable from './ConnectionRequestTable';
 
 const packageImages = {
     Packages1,
@@ -51,8 +52,10 @@ const GetPackage = () => {
                 </div>
                 <div className='lg:w-3/6'>
                     <ConnectionForm packageName={pkg.title}></ConnectionForm>
+
                 </div>
             </div>
+           
         </div>
     );
 };

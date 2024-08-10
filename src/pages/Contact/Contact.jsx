@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm('service_h8zvps2', 'template_glczk0e', form.current, 'kSx_kx58Li5qJvNVT')
+            .then(
+                () => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent!',
+                        text: 'Your message has been sent successfully.',
+                        confirmButtonText: 'OK',
+                    });
+                },
+                (error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `Something went wrong: ${error.text}`,
+                        confirmButtonText: 'Try Again',
+                    });
+                }
+            );
+    };
+
     return (
-        <div className="container mx-auto p-6 ">
+        <div className="container mx-auto p-6">
             <div className="text-3xl flex gap-4 justify-center my-10">
                 <span className="font-bold">Contact</span>
                 <span className="text-green-600">|</span>
@@ -12,12 +41,13 @@ const Contact = () => {
             <div className="flex flex-col lg:flex-row lg:space-x-6">
                 <div className="lg:w-1/2 mb-6 lg:mb-0">
                     <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-                    <form className="bg-white shadow-md rounded-md p-6">
+                    <form ref={form} onSubmit={sendEmail} className="bg-white shadow-md rounded-md p-6">
                         <div className="mb-4">
                             <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
                             <input
                                 type="text"
                                 id="name"
+                                name="user_name"
                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                             />
                         </div>
@@ -26,6 +56,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 id="email"
+                                name="user_email"
                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                             />
                         </div>
@@ -33,6 +64,7 @@ const Contact = () => {
                             <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Message</label>
                             <textarea
                                 id="message"
+                                name="message"
                                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                                 rows="5"
                             ></textarea>
@@ -74,7 +106,6 @@ const Contact = () => {
                             <FaWhatsapp className="text-2xl text-gray-700 hover:text-green-500 transition-colors" />
                         </a>
                     </div>
-                    
                 </div>
             </div>
         </div>

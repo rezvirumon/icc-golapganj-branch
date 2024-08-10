@@ -1,4 +1,3 @@
-
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
 import Error from "../pages/Error/Error";
@@ -11,53 +10,53 @@ import Login from "../pages/Validation/Login";
 import CreateNew from "../pages/Validation/CreateNew";
 import GetPackage from "../pages/Packages/GetPackage";
 import PrivateRoute from "./private/PrivateRoute";
-
-
-
-
-
+import AdminRoute from "./private/AdminRoute"; // Import the AdminRoute
+import ConnectionRequestTable from "../pages/Packages/ConnectionRequestTable";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Root></Root>,
-        errorElement: <Error></Error>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-            {
-                path: '/packages',
-                element: <Packages></Packages>
-            },
-            {
-                path: '/getstart/:id',
-                element: <PrivateRoute><GetPackage></GetPackage></PrivateRoute>
-            },
-            {
-                path: '/about',
-                element: <About></About>
-            },
-            {
-                path: '/contact',
-                element: <Contact></Contact>
-            },
-            {
-                path: '/customers',
-                element: <Customers></Customers>
-            },
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
-                path: '/create',
-                element: <CreateNew></CreateNew>
-            },
- 
-        ]
-    },
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: '/packages',
+        element: <Packages></Packages>
+      },
+      {
+        path: '/getstart/:id',
+        element: <PrivateRoute><GetPackage></GetPackage></PrivateRoute>
+      },
+      {
+        path: '/about',
+        element: <About></About>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      },
+      {
+        path: '/customers',
+        element: <PrivateRoute><Customers></Customers></PrivateRoute>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/create',
+        element: <CreateNew></CreateNew>
+      },
+      {
+        path: '/connections-request-table',
+        element: <AdminRoute><ConnectionRequestTable></ConnectionRequestTable></AdminRoute>
+      },
+    ]
+  },
 ]);
 
 export default router;

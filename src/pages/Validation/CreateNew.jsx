@@ -13,15 +13,16 @@ const CreateNew = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(''); // Reset error state
+        setError('');
 
         if (password.length < 6) {
             setError('Password should be at least 6 characters.');
             return;
         }
+
         try {
             await createUser(email, password, name, photoURL);
-            navigate('/customers'); // Redirect to the Customers page after account creation
+            navigate('/customers');
         } catch (error) {
             console.error('Error creating user:', error);
             setError(error.message);

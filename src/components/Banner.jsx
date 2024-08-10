@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Fade } from 'react-reveal';
 import Packages1 from '../assets/resource/10.png';
 import Packages2 from '../assets/resource/12.png';
 import Packages3 from '../assets/resource/20.png';
@@ -43,10 +42,15 @@ const Banner = () => {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex(prevIndex => (prevIndex + 1) % banners.length);
+            setAnimate(true);
+            setTimeout(() => {
+                setCurrentIndex(prevIndex => (prevIndex + 1) % banners.length);
+                setAnimate(false);
+            }, 500); // Duration of the fade-out animation
         }, 5000);
 
         return () => clearInterval(interval);
@@ -56,37 +60,25 @@ const Banner = () => {
 
     return (
         <div className="hero lg:py-24 py-5 border shadow-xl bg-white">
-            <div className="lg:flex flex-col justify-between w-full container p-5 items-center lg:flex-row-reverse">
-                <Fade key={`image-${currentIndex}`}>
-                    <img
-                        src={img}
-                        className="lg:max-w-sm transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/50 rounded-xl"
-                        alt={title}
-                    />
-
-                </Fade>
+            <div className={`lg:flex flex-col justify-between w-full container p-5 items-center lg:flex-row-reverse transition-opacity duration-500 ${animate ? 'opacity-0' : 'opacity-100'}`}>
+                <img
+                    src={img}
+                    className="lg:max-w-sm transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/50 rounded-xl"
+                    alt={title}
+                />
                 <div className="lg:flex-grow lg:mr-10 cursor-pointer relative z-10">
-                    <Fade bottom key={`title-${currentIndex}`}>
-                        <h1 className="lg:text-5xl text-3xl my-5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-900">
-                            {title}
-                        </h1>
-                    </Fade>
-                    <Fade bottom delay={300} key={`description-${currentIndex}`}>
-                        <p className="lg:py-6 py-4 lg:w-96">{description}</p>
-                    </Fade>
-                    <Fade bottom delay={600} key={`button-${currentIndex}`}>
-                        <a href="#" className="relative inline-block px-5 py-3 font-medium text-white bg-green-500 rounded-md group hover:bg-green-700 transition duration-300">
-                            <span
-                                className="flex relative z-10">Get Started
-                            </span>
-                            <span className="absolute inset-0 w-full h-full transition-all duration-300 transform -translate-x-2 -translate-y-2 bg-green-700 rounded-md group-hover:translate-x-0 group-hover:translate-y-0"></span>
-                        </a>
-                    </Fade>
+                    <h1 className="lg:text-5xl text-3xl my-5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-900">
+                        {title}
+                    </h1>
+                    <p className="lg:py-6 py-4 lg:w-96">{description}</p>
+                    <a href="#" className="relative inline-block px-5 py-3 font-medium text-white bg-green-500 rounded-md group hover:bg-green-700 transition duration-300">
+                        <span className="flex relative z-10">Get Started</span>
+                        <span className="absolute inset-0 w-full h-full transition-all duration-300 transform -translate-x-2 -translate-y-2 bg-green-700 rounded-md group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                    </a>
                 </div>
             </div>
             <div className='absolute inset-0 pointer-events-none lg:block hidden'>
                 <img className='absolute opacity-10 -left-48 -top-16 h-[700px;]' src={icctheme} alt="ICC Theme" />
-
             </div>
         </div>
     );
