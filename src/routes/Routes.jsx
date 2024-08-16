@@ -11,7 +11,10 @@ import CreateNew from "../pages/Validation/CreateNew";
 import GetPackage from "../pages/Packages/GetPackage";
 import PrivateRoute from "./private/PrivateRoute";
 import AdminRoute from "./private/AdminRoute"; // Import the AdminRoute
-import ConnectionRequestTable from "../pages/Packages/ConnectionRequestTable";
+
+import Dashboard from "../pages/Admin/Dashboard";
+import Loader from "../components/shared/Loader";
+import Gallery from "../pages/Gallery/Gallery";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +56,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/connections-request-table',
-        element: <AdminRoute><ConnectionRequestTable></ConnectionRequestTable></AdminRoute>
+        element: <AdminRoute><Dashboard></Dashboard></AdminRoute>
+      },
+      {
+        path: '/loader',
+        element: <Loader></Loader>
+      },
+      {
+        path: '/gallery',
+        element: <Gallery></Gallery>
       },
     ]
   },

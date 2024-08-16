@@ -1,16 +1,18 @@
 import React from 'react';
+import { FaBuilding, FaBullseye, FaEye, FaHandsHelping, FaWrench } from 'react-icons/fa';
 
 const About = () => {
     return (
         <div className="container mx-auto py-10">
-            <div className="text-3xl flex gap-4 justify-center my-10">
+            <div className="lg:text-3xl text-lg flex gap-4 justify-center my-10">
                 <span className="font-bold">About</span>
                 <span className="text-green-600">|</span>
                 <span className="font-semibold">ICC Communication Ltd.</span>
             </div>
-            <details className="collapse bg-white shadow-md rounded-md mb-4">
-                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer">
-                    About Us
+            
+            <details className="collapse bg-white shadow-md rounded-lg mb-4">
+                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer flex items-center gap-2">
+                    <FaBuilding className="text-blue-500" /> About Us
                 </summary>
                 <div className="collapse-content px-4 py-2">
                     <p className="mb-2">
@@ -25,9 +27,9 @@ const About = () => {
                 </div>
             </details>
 
-            <details className="collapse bg-white shadow-md rounded-md mb-4">
-                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer">
-                    Our Mission
+            <details className="collapse bg-white shadow-md rounded-lg mb-4">
+                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer flex items-center gap-2">
+                    <FaBullseye className="text-green-500" /> Our Mission
                 </summary>
                 <div className="collapse-content px-4 py-2">
                     <p>
@@ -36,9 +38,9 @@ const About = () => {
                 </div>
             </details>
 
-            <details className="collapse bg-white shadow-md rounded-md mb-4">
-                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer">
-                    Our Vision
+            <details className="collapse bg-white shadow-md rounded-lg mb-4">
+                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer flex items-center gap-2">
+                    <FaEye className="text-yellow-500" /> Our Vision
                 </summary>
                 <div className="collapse-content px-4 py-2">
                     <p>
@@ -47,9 +49,9 @@ const About = () => {
                 </div>
             </details>
 
-            <details className="collapse bg-white shadow-md rounded-md mb-4">
-                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer">
-                    Our Values
+            <details className="collapse bg-white shadow-md rounded-lg mb-4">
+                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer flex items-center gap-2">
+                    <FaHandsHelping className="text-red-500" /> Our Values
                 </summary>
                 <div className="collapse-content px-4 py-2">
                     <ul className="list-disc list-inside">
@@ -62,9 +64,9 @@ const About = () => {
                 </div>
             </details>
 
-            <details className="collapse bg-white shadow-md rounded-md mb-4">
-                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer">
-                    Our Services
+            <details className="collapse bg-white shadow-md rounded-lg mb-4">
+                <summary className="collapse-title text-xl font-medium px-4 py-2 cursor-pointer flex items-center gap-2">
+                    <FaWrench className="text-purple-500" /> Our Services
                 </summary>
                 <div className="collapse-content px-4 py-2">
                     <ul className="list-disc list-inside">

@@ -12,7 +12,7 @@ const Customers = () => {
         const fetchRequests = async () => {
             try {
                 if (user) {
-                    const response = await axios.get(`http://localhost:3001/api/connection-requests/user/${user.email}`);
+                    const response = await axios.get(`https://icc-golapganj-server.vercel.app/api/connection-requests/user/${user.email}`);
                     setRequests(response.data);
                 }
             } catch (error) {

@@ -142,9 +142,7 @@ const Navbar = () => {
                                 <NavLink to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">
                                     ICC-Website
                                 </NavLink>
-                                <NavLink to="/customers" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                                    Users Sections
-                                </NavLink>
+                              
                                 <a href="http://10.16.100.244/" className="relative px-5 py-2 font-medium text-white group">
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-700 group-hover:bg-green-500 group-hover:-skew-x-12"></span>

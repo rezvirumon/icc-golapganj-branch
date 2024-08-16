@@ -10,7 +10,7 @@ const ConnectionRequestTable = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/connection-requests');
+        const response = await axios.get('https://icc-golapganj-server.vercel.app/api/connection-requests');
         if (Array.isArray(response.data)) {
           setRequests(response.data);
         } else {
@@ -38,7 +38,7 @@ const ConnectionRequestTable = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.patch(`http://localhost:3001/api/connection-requests/${id}/status`, { status });
+        await axios.patch(`https://icc-golapganj-server.vercel.app/api/connection-requests/${id}/status`, { status });
         setRequests(requests.map(request =>
           request._id === id ? { ...request, status } : request
         ));
@@ -61,7 +61,7 @@ const ConnectionRequestTable = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3001/api/connection-requests/${id}`);
+        await axios.delete(`https://icc-golapganj-server.vercel.app/api/connection-requests/${id}`);
         setRequests(requests.filter(request => request._id !== id));
         Swal.fire('Deleted!', 'The request has been deleted.', 'success');
       } catch (error) {
@@ -80,54 +80,62 @@ const ConnectionRequestTable = () => {
   }
 
   return (
-    <div className="overflow-x-auto container mx-auto my-10 min-h-screen">
+    <div className="container mx-auto my-5">
       <h1 className="text-xl font-bold mb-4">Connection Requests</h1>
       {requests.length > 0 ? (
-        <table className="table text-center">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Package</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {requests.map((request, index) => (
-              <tr key={request._id} className={index % 2 === 0 ? '' : 'hover'}>
-                <th>{index + 1}</th>
-                <td>{request.name}</td>
-                <td>{request.email}</td>
-                <td>{request.packageName}</td>
-                <td>{request.status}</td>
-                <td className="flex justify-center">
-                  <button
-                    className="btn btn-sm btn-success mr-2"
-                    onClick={() => handleStatusChange(request._id, 'Accepted')}
-                  >
-                    Accept
-                  </button>
-                  <button
-                    className="btn btn-sm btn-warning mr-2"
-                    onClick={() => handleStatusChange(request._id, 'Rejected')}
-                  >
-                    Reject
-                  </button>
-                  <button
-                    className="btn btn-sm btn-danger"
-                    onClick={() => handleDelete(request._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
+        <div className="bg-white shadow rounded p-4">
+          <table className="w-full text-center border-collapse">
+            <thead>
+              <tr>
+                <th className="border-b py-2">#</th>
+                <th className="border-b py-2">Name</th>
+                <th className="border-b py-2">Email</th>
+                <th className="border-b py-2">Package</th>
+                <th className="border-b py-2">Union</th>
+                <th className="border-b py-2">Status</th>
+                <th className="border-b py-2">Request Date</th>
+                <th className="border-b py-2">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {requests.map((request, index) => (
+                <tr key={request._id} className={`transition-all duration-200 hover:bg-gray-100 ${index % 2 === 0 ? '' : 'bg-gray-50'}`}>
+                  <td className="border-b py-2">{index + 1}</td>
+                  <td className="border-b py-2">{request.name}</td>
+                  <td className="border-b py-2">{request.email}</td>
+                  <td className="border-b py-2">{request.packageName}</td>
+                  <td className="border-b py-2">{request.unionName}</td>
+                  <td className={`border-b py-2 font-bold ${request.status === 'Accepted' ? 'text-green-500' : request.status === 'Rejected' ? 'text-red-500' : 'text-yellow-500'}`}>
+                    {request.status}
+                  </td>
+                  <td className="border-b py-2">{new Date(request.requestedDate).toLocaleDateString()}</td>
+                  <td className="border-b py-2 flex justify-center space-x-2">
+                    <button
+                      className="transition-transform transform hover:scale-105 text-white bg-green-500 px-2 py-1 rounded"
+                      onClick={() => handleStatusChange(request._id, 'Accepted')}
+                    >
+                      Accept
+                    </button>
+                    <button
+                      className="transition-transform transform hover:scale-105 text-white bg-yellow-500 px-2 py-1 rounded"
+                      onClick={() => handleStatusChange(request._id, 'Rejected')}
+                    >
+                      Reject
+                    </button>
+                    <button
+                      className="transition-transform transform hover:scale-105 text-white bg-red-500 px-2 py-1 rounded"
+                      onClick={() => handleDelete(request._id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       ) : (
-        <div>No connection requests found</div>
+        <div className="bg-white shadow rounded p-4">No connection requests found</div>
       )}
     </div>
   );

@@ -7,7 +7,7 @@ import {
   signOut,
   updateProfile,
 } from 'firebase/auth';
-import { app } from '../firebase/firebase.config';
+import { app } from '../firebase/firebase.config'; // Adjust the path as needed
 import axios from 'axios';
 
 export const AuthContext = createContext(null);
@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
       });
 
       // Save user with role to your backend
-      await axios.post('/api/users', {
+      await axios.post('https://icc-golapganj-server.vercel.app/api/users', {
         email,
         displayName: name,
         photoURL,
@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     try {
       await signOut(auth);
-      await axios.post('/logout');
+      await axios.post('https://icc-golapganj-server.vercel.app/logout');
     } catch (error) {
       console.error('Error logging out:', error.message);
       throw new Error(error.message);
@@ -70,7 +70,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         try {
-          const response = await axios.get(`http://localhost:3001/api/users/${currentUser.email}`);
+          const response = await axios.get(`https://icc-golapganj-server.vercel.app/api/users/${currentUser.email}`);
           console.log('Backend Response:', response.data);
 
           const userWithRole = {

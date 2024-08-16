@@ -1,21 +1,26 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
-import { Navigate, useLocation } from 'react-router-dom';
-
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import Loader from "../../components/shared/Loader";
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
+    const navigate = useNavigate();
     const intendedPath = localStorage.getItem('intendedPath'); // Retrieve intended path from localStorage
+
+    useEffect(() => {
+        if (user && intendedPath) {
+            localStorage.removeItem('intendedPath'); // Clear intended path from localStorage
+            navigate(intendedPath); // Redirect to intended path
+        }
+    }, [user, intendedPath, navigate]);
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-screen ">
+            <div className="">
                 <div className="text-center">
-                   
-                    <p className="mt-4 text-xl font-semibold text-gray-700">
-                    
-                    </p>
+                    <Loader></Loader>
                 </div>
             </div>
         );

@@ -47,7 +47,7 @@ const Partners = () => {
 
     return (
         <div className="py-10 bg-gray-100">
-            <div className="text-3xl flex gap-4 justify-center my-10">
+            <div className="lg:text-3xl text-lg flex gap-4 justify-center my-10">
                 <span className="font-bold">Valuable</span>
                 <span className="text-green-600">|</span>
                 <span className="font-semibold">Partners</span>

@@ -71,7 +71,7 @@ const Banner = () => {
                         {title}
                     </h1>
                     <p className="lg:py-6 py-4 lg:w-96">{description}</p>
-                    <a href="#" className="relative inline-block px-5 py-3 font-medium text-white bg-green-500 rounded-md group hover:bg-green-700 transition duration-300">
+                    <a href="/login" className="relative inline-block px-5 py-3 font-medium text-white bg-green-500 rounded-md group hover:bg-green-700 transition duration-300">
                         <span className="flex relative z-10">Get Started</span>
                         <span className="absolute inset-0 w-full h-full transition-all duration-300 transform -translate-x-2 -translate-y-2 bg-green-700 rounded-md group-hover:translate-x-0 group-hover:translate-y-0"></span>
                     </a>

@@ -30,8 +30,8 @@ const GetPackage = () => {
     const packageImage = packageImages[pkg.img];
 
     return (
-        <div className="lg:px-5 py-10">
-            <div className='lg:flex items-center w-full justify-between container mx-auto'>
+        <div className="lg:px-5 ">
+            <div className='lg:flex items-center my-10'>
                 <div className='lg:w-3/6'>
                     <div className="text-3xl flex gap-4 justify-center my-10">
                         <span className="font-bold text-green-600">{pkg.title} Package</span>
