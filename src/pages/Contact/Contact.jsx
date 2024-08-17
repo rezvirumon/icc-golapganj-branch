@@ -33,7 +33,7 @@ const Contact = () => {
 
     return (
         <div className="container mx-auto p-6">
-            <div className="text-3xl flex gap-4 justify-center my-10">
+            <div className="text-3xl flex gap-4 justify-center mb-20 border-b-2 pb-5">
                 <span className="font-bold">Contact</span>
                 <span className="text-green-600">|</span>
                 <span className="font-semibold">Us</span>

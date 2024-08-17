@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const CreateNew = () => {
     const [email, setEmail] = useState('');
@@ -17,15 +18,32 @@ const CreateNew = () => {
 
         if (password.length < 6) {
             setError('Password should be at least 6 characters.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should be at least 6 characters.',
+            });
             return;
         }
 
         try {
             await createUser(email, password, name, photoURL);
-            navigate('/customers');
+            Swal.fire({
+                icon: 'success',
+                title: 'Account Created!',
+                text: 'Your account has been successfully created.',
+                confirmButtonText: 'Continue',
+            }).then(() => {
+                navigate('/customers');
+            });
         } catch (error) {
             console.error('Error creating user:', error);
             setError(error.message);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: error.message,
+            });
         }
     };
 

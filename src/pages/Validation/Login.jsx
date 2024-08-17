@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -13,10 +14,32 @@ const Login = () => {
         e.preventDefault();
         try {
             await signIn(username, password);
-            navigate('/customers'); // Redirect to the Customers page
+
+            // Show success alert
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successful',
+                text: 'You have successfully logged in.',
+                confirmButtonText: 'Continue',
+            }).then(() => {
+                const intendedPath = localStorage.getItem('intendedPath');
+                if (intendedPath) {
+                    localStorage.removeItem('intendedPath'); // Clear intended path from localStorage
+                    navigate(intendedPath); // Redirect to intended path
+                } else {
+                    navigate('/customers'); // Default redirect
+                }
+            });
         } catch (error) {
             console.error('Error signing in:', error);
             setError('Failed to sign in. Please check your username and password.');
+
+            // Show error alert
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed',
+                text: 'Please check your username and password and try again.',
+            });
         }
     };
 

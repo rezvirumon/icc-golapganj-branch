@@ -5,7 +5,7 @@ const MikroTik = () => {
             <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div className="font-bold mb-4">
                     <p className="mb-2">
-                        PPPoE Username: <span className="font-normal">rumonnetwork</span>
+                        Username: <span className="font-normal">rumonnetwork</span>
                     </p>
                     <p className="mb-2">
                         Customer ID: <span className="font-normal">15600</span>

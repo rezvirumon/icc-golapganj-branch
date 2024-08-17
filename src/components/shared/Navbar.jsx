@@ -26,11 +26,10 @@ const Navbar = () => {
         };
 
         const handleClickOutside = (event) => {
-            if (
-                menuRef.current && !menuRef.current.contains(event.target) &&
-                dropdownRef.current && !dropdownRef.current.contains(event.target)
-            ) {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
                 setIsOpen(false);
+            }
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setIsDropdownOpen(false);
             }
         };
@@ -98,7 +97,6 @@ const Navbar = () => {
                                     <NavLink to="/customers" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
                                         Users Sections
                                     </NavLink>
-
                                 </div>
                             )}
                         </div>
@@ -142,7 +140,7 @@ const Navbar = () => {
                                 <NavLink to="https://www.icc.com.bd/" className="text-green-800 hover:text-green-600">
                                     ICC-Website
                                 </NavLink>
-                              
+
                                 <a href="http://10.16.100.244/" className="relative px-5 py-2 font-medium text-white group">
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
                                     <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-700 group-hover:bg-green-500 group-hover:-skew-x-12"></span>
@@ -161,68 +159,73 @@ const Navbar = () => {
                             </>
                         )}
                     </div>
-                    <div className="flex md:hidden">
-                        <button
-                            onClick={toggleMenu}
-                            className="text-gray-800 hover:text-green-600 focus:outline-none transition-transform duration-300"
-                        >
-                            {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+                    <div className="md:hidden flex items-center">
+                        <button onClick={toggleMenu} className="text-gray-800 hover:text-gray-600 focus:outline-none">
+                            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
                         </button>
                     </div>
                 </div>
             </div>
-
             {isOpen && (
-                <div ref={menuRef} className="md:hidden block bg-white shadow-lg rounded-lg">
-                    <NavLink to="/" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                        Home
-                    </NavLink>
-                    <button onClick={toggleDropdown} className="block px-4 py-2 text-green-800 hover:bg-gray-100 ">
-                        Customer Corner
-                    </button>
-                    {isDropdownOpen && (
-                        <div className="bg-gray-100">
-                            <NavLink to="https://iccfios.net/icc-form/" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                                IP Telephony Registration
-                            </NavLink>
-                            <NavLink to="https://portal.iccbd.com/customer/login" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                                Portal
-                            </NavLink>
-                            <NavLink to="https://billing.iccbd.com/index.jsp" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                                Resellers
-                            </NavLink>
-                            <NavLink to="/customers" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                                Users Sections
-                            </NavLink>
-                            <NavLink to="/connections-request-table" className="lg:hidden btn btn-success flex">
-                                Admin
-                            </NavLink>
+                <div className="md:hidden">
+                    <div ref={menuRef} className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+                        <NavLink to="/" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                            Home
+                        </NavLink>
 
-                        </div>
-                    )}
-                    <NavLink to="/packages" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                        Packages
-                    </NavLink>
-                    <NavLink to="/contact" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                        Contact
-                    </NavLink>
-                    <NavLink to="/contact" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
-                        FTP Server
-                    </NavLink>
-                    <div className="w-full py-5">
+                        <NavLink to="/packages" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                            Packages
+                        </NavLink>
+                        <NavLink to="/contact" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                            Contact
+                        </NavLink>
+                        <NavLink to="https://iccfios.net/icc-form/" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
+                            IP Telephony Registration
+                        </NavLink>
+                        <NavLink to="https://portal.iccbd.com/customer/login" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
+                            Portal
+                        </NavLink>
+                        <NavLink to="https://billing.iccbd.com/index.jsp" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
+                            Resellers
+                        </NavLink>
+                        <NavLink to="/customers" className="block px-4 py-2 text-green-800 hover:bg-gray-100">
+                            Users Sections
+                        </NavLink>
                         {user ? (
                             <>
-                                <button onClick={handleLogout} className="text-red-800 btn w-full hover:text-red-600">
+                                <NavLink to="https://www.icc.com.bd/" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    ICC-Website
+                                </NavLink>
+                                <a href="http://10.16.100.244/" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    FTP Server
+                                </a>
+                                <a href="#" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    Pay Now
+                                </a>
+                                <Link to='/connections-request-table' className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    Admin Panel
+                                </Link>
+                                <button onClick={handleLogout} className="btn w-full bg-green-500 hover:bg-green-600">
                                     Logout
                                 </button>
-
                             </>
                         ) : (
                             <>
-                                <NavLink to="/login" className="text-green-800 btn w-full hover:text-green-600">
+                                <NavLink to="/login" className="block text-green-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
                                     Login
                                 </NavLink>
-
+                                <NavLink to="https://www.icc.com.bd/" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    ICC-Website
+                                </NavLink>
+                                <a href="http://10.16.100.244/" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    FTP Server
+                                </a>
+                                <a href="#" className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    Pay Now
+                                </a>
+                                <Link to='/connections-request-table' className="block text-gray-800 hover:bg-green-600 hover:text-white px-3 py-2 rounded-md">
+                                    Admin Panel
+                                </Link>
                             </>
                         )}
                     </div>

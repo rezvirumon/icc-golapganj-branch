@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@headlessui/react": "^2.1.2",
     "axios": "^1.7.3",
     "firebase": "^10.12.5",
     "leaflet": "^1.9.4",
