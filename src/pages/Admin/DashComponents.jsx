@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaUsers, FaClipboardList, FaCheckCircle, FaTimesCircle, FaHourglassHalf, FaChartLine, FaGlobe, FaDatabase } from 'react-icons/fa';
+import Loader from '../../components/shared/Loader';
 
 const DashComponents = () => {
     const [totalUsers, setTotalUsers] = useState(0);
@@ -48,7 +49,7 @@ const DashComponents = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loader></Loader>;
     }
 
     if (error) {

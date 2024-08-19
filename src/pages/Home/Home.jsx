@@ -5,6 +5,7 @@ import Partners from "./Partners";
 import Services from "./Services";
 import MostRequested from "../Packages/MostRequested";
 import AnnouncementBanner from "../Admin/AnnouncementBanner";
+import OurTeam from "../Gallery/OurTeam";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <Packages></Packages>
             <MostRequested></MostRequested>
             <Partners></Partners>
+            <OurTeam></OurTeam>
         </div>
     );
 };

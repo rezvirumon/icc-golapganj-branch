@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
+import AreaPOP from './AreaPOP';
 
 const Contact = () => {
     const form = useRef();
@@ -33,11 +34,13 @@ const Contact = () => {
 
     return (
         <div className="container mx-auto p-6">
+
             <div className="text-3xl flex gap-4 justify-center mb-20 border-b-2 pb-5">
                 <span className="font-bold">Contact</span>
                 <span className="text-green-600">|</span>
                 <span className="font-semibold">Us</span>
             </div>
+            <AreaPOP></AreaPOP>
             <div className="flex flex-col lg:flex-row lg:space-x-6">
                 <div className="lg:w-1/2 mb-6 lg:mb-0">
                     <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
