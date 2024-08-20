@@ -1,50 +1,47 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import newIcctheme from '../../assets/resource/icc-theme.png';
 
 const teamMembers = [
     {
-        name: 'John Doe',
-        role: 'Front-end Developer',
-        image: 'https://i.ibb.co/DMvmgvq/computer-icons-user-profile-clip-art-user-avatar-21c31463c33be747e38ba658e58821bb.png',
+        name: 'Humayun Kabeer',
+        role: 'Owner (Golapganj Branch)',
+        image: 'https://i.ibb.co/S6xrXK3/Untitled-design-7.png',
         social: {
-            facebook: 'https://facebook.com/johndoe',
-            twitter: 'https://twitter.com/johndoe',
-            linkedin: 'https://linkedin.com/in/johndoe',
-            github: 'https://github.com/johndoe',
+            facebook: 'https://www.facebook.com/humaiun.kabir.5201',
+            whatsapp: 'https://api.whatsapp.com/send?phone=8801722996081&text=Link%3A%0Ahttps%3A%2F%2Ffb.me%2F4T4huIifM%0A%0AHello%21+Can+I+get+more+info+on+this%3F&source_url=https%3A%2F%2Ffb.me%2F4T4huIifM&icebreaker=Hello%21+Can+I+get+more+info+on+this%3F&app=facebook&entry_point=post_cta&jid=8801823685472%40s.whatsapp.net&show_keyboard=1&show_ad_attribution=1&source=FB_Post&context=ARAnkdBhI0rEEmrmlLwufH8zuwCvuAxjz-dkXyB-OPV5vdSftGyPUlbjdLZGJH2kAo02BQI9S7g_gnmzyRZKR9RLyrO53MX2W8IS1VXEupI60Pz9GTJBn28YGtOshbDqTTYrdtJnFY1LchxRR5AUjyHyIpm-sINA7bceMTVe6xZjC6U52CeiMkT5ZiVzQc8ZWKHxDw7drEkfgyk2BN-BifZdPvQAsXeSP-qoR0G743P2Pv0lY-5JABpFzQ1LJbwEaG7gh6AzBrk6Y-4FiB26QuzbbIoQ64Bz5a8JAR4E4BGemMQBxbpcaQ_TOHBwqQVWjndVZAYoAxs1unTC90rG_NMuD5yjFAHYnBeS_1Po&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3MjQyMjIzNzUsInBob25lIjoiODgwMTgyMzY4NTQ3MiIsInRleHQiOiJMaW5rOlxuaHR0cHM6XC9cL2ZiLm1lXC80VDRodUlpZk1cblxuSGVsbG8hIENhbiBJIGdldCBtb3JlIGluZm8gb24gdGhpcz8iLCJzb3VyY2VfdXJsIjoiaHR0cHM6XC9cL2ZiLm1lXC80VDRodUlpZk0iLCJpY2VicmVha2VyIjoiSGVsbG8hIENhbiBJIGdldCBtb3JlIGluZm8gb24gdGhpcz8iLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicG9zdF9jdGEiLCJqaWQiOiI4ODAxODIzNjg1NDcyXHUwMDQwcy53aGF0c2FwcC5uZXQiLCJzaG93X2tleWJvYXJkIjoxLCJzaG93X2FkX2F0dHJpYnV0aW9uIjoxLCJzb3VyY2UiOiJGQl9Qb3N0In0.eiFkoFQCq7RCdwCMXPfVnCEwKEB3kusSWf25DV5fiFIG3c_ogO2e7Vaj7vtMuuPujDgGM5cmZlC9gHWLgR2VzQ&fbclid=IwY2xjawExIpJleHRuA2FlbQIxMAABHdP4QhUmFOxJLhIScEFgXQPlG11Z-SOcRbOhsYJ0iyMygB81euIktyb6EA_aem_BLfeZV9MJiDGbVNN7ab4oA',
+
         },
     },
     {
-        name: 'Jane Smith',
-        role: 'Back-end Developer',
-        image: 'https://i.ibb.co/DMvmgvq/computer-icons-user-profile-clip-art-user-avatar-21c31463c33be747e38ba658e58821bb.png',
+        name: 'Rumon',
+        role: 'Network Engineer & Web Developer',
+        image: 'https://i.ibb.co/QC6D18j/Untitled-design-6.png',
         social: {
             facebook: 'https://facebook.com/janesmith',
             twitter: 'https://twitter.com/janesmith',
-            linkedin: 'https://linkedin.com/in/janesmith',
-            github: 'https://github.com/janesmith',
+            linkedin: 'https://www.linkedin.com/in/hasan-rumon/',
+            github: 'https://github.com/rezvirumon',
+            whatsapp: 'https://api.whatsapp.com/send?phone=8801823685472&text=Link%3A%0Ahttps%3A%2F%2Ffb.me%2F4T4huIifM%0A%0AHello%21+Can+I+get+more+info+on+this%3F&source_url=https%3A%2F%2Ffb.me%2F4T4huIifM&icebreaker=Hello%21+Can+I+get+more+info+on+this%3F&app=facebook&entry_point=post_cta&jid=8801823685472%40s.whatsapp.net&show_keyboard=1&show_ad_attribution=1&source=FB_Post&context=ARAnkdBhI0rEEmrmlLwufH8zuwCvuAxjz-dkXyB-OPV5vdSftGyPUlbjdLZGJH2kAo02BQI9S7g_gnmzyRZKR9RLyrO53MX2W8IS1VXEupI60Pz9GTJBn28YGtOshbDqTTYrdtJnFY1LchxRR5AUjyHyIpm-sINA7bceMTVe6xZjC6U52CeiMkT5ZiVzQc8ZWKHxDw7drEkfgyk2BN-BifZdPvQAsXeSP-qoR0G743P2Pv0lY-5JABpFzQ1LJbwEaG7gh6AzBrk6Y-4FiB26QuzbbIoQ64Bz5a8JAR4E4BGemMQBxbpcaQ_TOHBwqQVWjndVZAYoAxs1unTC90rG_NMuD5yjFAHYnBeS_1Po&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3MjQyMjIzNzUsInBob25lIjoiODgwMTgyMzY4NTQ3MiIsInRleHQiOiJMaW5rOlxuaHR0cHM6XC9cL2ZiLm1lXC80VDRodUlpZk1cblxuSGVsbG8hIENhbiBJIGdldCBtb3JlIGluZm8gb24gdGhpcz8iLCJzb3VyY2VfdXJsIjoiaHR0cHM6XC9cL2ZiLm1lXC80VDRodUlpZk0iLCJpY2VicmVha2VyIjoiSGVsbG8hIENhbiBJIGdldCBtb3JlIGluZm8gb24gdGhpcz8iLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicG9zdF9jdGEiLCJqaWQiOiI4ODAxODIzNjg1NDcyXHUwMDQwcy53aGF0c2FwcC5uZXQiLCJzaG93X2tleWJvYXJkIjoxLCJzaG93X2FkX2F0dHJpYnV0aW9uIjoxLCJzb3VyY2UiOiJGQl9Qb3N0In0.eiFkoFQCq7RCdwCMXPfVnCEwKEB3kusSWf25DV5fiFIG3c_ogO2e7Vaj7vtMuuPujDgGM5cmZlC9gHWLgR2VzQ&fbclid=IwY2xjawExIpJleHRuA2FlbQIxMAABHdP4QhUmFOxJLhIScEFgXQPlG11Z-SOcRbOhsYJ0iyMygB81euIktyb6EA_aem_BLfeZV9MJiDGbVNN7ab4oA',
         },
     },
     {
-        name: 'Emily Johnson',
-        role: 'UI/UX Designer',
-        image: 'https://i.ibb.co/DMvmgvq/computer-icons-user-profile-clip-art-user-avatar-21c31463c33be747e38ba658e58821bb.png',
+        name: 'Jahangir Alom',
+        role: 'Senior Fiber Technician',
+        image: 'https://i.ibb.co/VTLx1Td/Untitled-design-9.png',
         social: {
-            facebook: 'https://facebook.com/emilyjohnson',
-            twitter: 'https://twitter.com/emilyjohnson',
-            linkedin: 'https://linkedin.com/in/emilyjohnson',
-            github: 'https://github.com/emilyjohnson',
+            facebook: 'https://www.facebook.com/jahanger.alom.10',
+            
         },
     },
     {
-        name: 'Michael Brown',
-        role: 'Project Manager',
-        image: 'https://i.ibb.co/DMvmgvq/computer-icons-user-profile-clip-art-user-avatar-21c31463c33be747e38ba658e58821bb.png',
+        name: 'Najmul Khan',
+        role: 'Network Support & Fiber Technician',
+        image: 'https://i.ibb.co/6bJRJFk/Untitled-design-8.png',
         social: {
-            facebook: 'https://facebook.com/michaelbrown',
-            twitter: 'https://twitter.com/michaelbrown',
-            linkedin: 'https://linkedin.com/in/michaelbrown',
-            github: 'https://github.com/michaelbrown',
+            facebook: 'https://www.facebook.com/mdnajmulhossain1998',
+            whatsapp: 'https://api.whatsapp.com/send?phone=8801845594383&text=Link%3A%0Ahttps%3A%2F%2Ffb.me%2F4T4huIifM%0A%0AHello%21+Can+I+get+more+info+on+this%3F&source_url=https%3A%2F%2Ffb.me%2F4T4huIifM&icebreaker=Hello%21+Can+I+get+more+info+on+this%3F&app=facebook&entry_point=post_cta&jid=8801823685472%40s.whatsapp.net&show_keyboard=1&show_ad_attribution=1&source=FB_Post&context=ARAnkdBhI0rEEmrmlLwufH8zuwCvuAxjz-dkXyB-OPV5vdSftGyPUlbjdLZGJH2kAo02BQI9S7g_gnmzyRZKR9RLyrO53MX2W8IS1VXEupI60Pz9GTJBn28YGtOshbDqTTYrdtJnFY1LchxRR5AUjyHyIpm-sINA7bceMTVe6xZjC6U52CeiMkT5ZiVzQc8ZWKHxDw7drEkfgyk2BN-BifZdPvQAsXeSP-qoR0G743P2Pv0lY-5JABpFzQ1LJbwEaG7gh6AzBrk6Y-4FiB26QuzbbIoQ64Bz5a8JAR4E4BGemMQBxbpcaQ_TOHBwqQVWjndVZAYoAxs1unTC90rG_NMuD5yjFAHYnBeS_1Po&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3MjQyMjIzNzUsInBob25lIjoiODgwMTgyMzY4NTQ3MiIsInRleHQiOiJMaW5rOlxuaHR0cHM6XC9cL2ZiLm1lXC80VDRodUlpZk1cblxuSGVsbG8hIENhbiBJIGdldCBtb3JlIGluZm8gb24gdGhpcz8iLCJzb3VyY2VfdXJsIjoiaHR0cHM6XC9cL2ZiLm1lXC80VDRodUlpZk0iLCJpY2VicmVha2VyIjoiSGVsbG8hIENhbiBJIGdldCBtb3JlIGluZm8gb24gdGhpcz8iLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicG9zdF9jdGEiLCJqaWQiOiI4ODAxODIzNjg1NDcyXHUwMDQwcy53aGF0c2FwcC5uZXQiLCJzaG93X2tleWJvYXJkIjoxLCJzaG93X2FkX2F0dHJpYnV0aW9uIjoxLCJzb3VyY2UiOiJGQl9Qb3N0In0.eiFkoFQCq7RCdwCMXPfVnCEwKEB3kusSWf25DV5fiFIG3c_ogO2e7Vaj7vtMuuPujDgGM5cmZlC9gHWLgR2VzQ&fbclid=IwY2xjawExIpJleHRuA2FlbQIxMAABHdP4QhUmFOxJLhIScEFgXQPlG11Z-SOcRbOhsYJ0iyMygB81euIktyb6EA_aem_BLfeZV9MJiDGbVNN7ab4oA',
+
         },
     },
 ];
@@ -81,14 +78,15 @@ const OurTeam = () => {
                             <h3 className="text-2xl font-semibold mb-2 text-gray-900">
                                 {member.name}
                             </h3>
-                            <p className="text-lg font-medium text-gray-700">{member.role}</p>
+                            <p className="text-xl font-medium text-gray-700">{member.role}</p>
                             <div className="flex justify-center mt-4 space-x-4">
                                 <a href={member.social.facebook} target="_blank" rel="noopener noreferrer">
                                     <FaFacebook className="text-blue-600 hover:text-blue-800 transition-colors duration-300" />
                                 </a>
-                                <a href={member.social.twitter} target="_blank" rel="noopener noreferrer">
-                                    <FaTwitter className="text-blue-400 hover:text-blue-600 transition-colors duration-300" />
+                                <a href={member.social.whatsapp} target="_blank" rel="noopener noreferrer">
+                                    <FaWhatsapp className="text-blue-600 hover:text-blue-800 transition-colors duration-300" />
                                 </a>
+                                
                                 <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
                                     <FaLinkedin className="text-blue-700 hover:text-blue-900 transition-colors duration-300" />
                                 </a>
